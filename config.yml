@@ -1,0 +1,28 @@
+backend:
+  name: git-gateway
+  branch: main
+media_folder: "images"
+public_folder: "/images"
+site_url: https://masionthrift.netlify.app
+logo_url: https://masionthrift.netlify.app/
+collections:
+  - name: "store"
+    label: "Store Products"
+    files:
+      - name: "products"
+        label: "Products"
+        file: "data/products.json"
+        format: "json"
+        fields:
+          - label: "Products"
+            name: "items"
+            widget: "list"
+            fields:
+              - {label: "Product code", name: "code", widget: "string"}
+              - {label: "Product name", name: "name", widget: "string"}
+              - {label: "Price", name: "price", widget: "string"}
+              - {label: "Size / measurements", name: "size", widget: "string"}
+              - {label: "Condition", name: "condition", widget: "string"}
+              - {label: "Product photo", name: "image", widget: "image", required: false}
+              - {label: "Available for sale", name: "available", widget: "boolean", default: true}
+              - {label: "Description", name: "description", widget: "text", required: false}
